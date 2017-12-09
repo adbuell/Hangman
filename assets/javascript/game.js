@@ -3,7 +3,7 @@
     var availableLetters, words, guessInput, guess, guessButton, lettersGuessed, lettersMatched, output, man, letters, lives, currentWord, numLettersMatched, messages;
 
     function setup() {
-
+        /* start config options */
         availableLetters = "abcdefghijklmnopqrstuvwxyz";
         lives = 5;
         words = ["walter", "dude", "rug", "bowling"];
@@ -13,7 +13,7 @@
             guessed: ' already guessed, please try again...',
             validLetter: 'Please enter a letter from A-Z'
         };
-
+        /* end config options */
 
         lettersGuessed = lettersMatched = '';
         numLettersMatched = 0;
@@ -21,7 +21,7 @@
         /* choose a word */
         currentWord = words[Math.floor(Math.random() * words.length)];
 
-        /* make #man and #output */
+        /* make #man and #output blank*/
         output = document.getElementById("output");
         man = document.getElementById("man");
         guessInput = document.getElementById("letter");
@@ -38,14 +38,19 @@
 
         /* set up display of letters in current word */
         letters = document.getElementById("letters");
-        letters.innerHTML = '<li class="current-word">Current word:</li>';
+        console.log("letters");
+        letters.innerHTML = '<span class="current-word">Current word:</span>';
 
         var letter, i;
         for (i = 0; i < currentWord.length; i++) {
-            letter = '<li class="letter letter' + currentWord.charAt(i).toUpperCase() + '">' + currentWord.charAt(i).toUpperCase() + '</li>';
+          // console.log(currentWord);
+            letter = '<span class="letter letter' + currentWord.charAt(i).toUpperCase() + '">' + currentWord.charAt(i).toUpperCase() + '</span>';
             letters.insertAdjacentHTML('beforeend', letter);
+            console.log("beforeend");
         }
     }
+    
+
 
     function gameOver(win) {
         if (win) {
@@ -95,6 +100,7 @@
 
                     for (var i = 0; i < lettersToShow.length; i++) {
                         lettersToShow[i].classList.add("correct");
+
                     }
 
                     /* check to see if letter appears multiple times */
