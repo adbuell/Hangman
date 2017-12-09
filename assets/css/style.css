@@ -1,0 +1,18 @@
+img {
+  width: 80%;
+
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.letter {
+   display: inline-block;
+   list-style: none;
+   width: 20px;
+   margin: 0 5px;
+   border-bottom: 1px solid black;
+   text-align: center;
+   color: white;
+}
