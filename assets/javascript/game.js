@@ -35,10 +35,10 @@
         guessButton = document.getElementById("guess");
         guessInput.style.display = 'inline';
         guessButton.style.display = 'inline';
-
+ // console.log('inline');
         /* set up display of letters in current word */
         letters = document.getElementById("letters");
-        console.log("letters");
+        // console.log("letters");
         letters.innerHTML = '<span class="current-word">Current word:</span>';
 
         var letter, i;
@@ -46,10 +46,10 @@
           // console.log(currentWord);
             letter = '<span class="letter letter' + currentWord.charAt(i).toUpperCase() + '">' + currentWord.charAt(i).toUpperCase() + '</span>';
             letters.insertAdjacentHTML('beforeend', letter);
-            console.log("beforeend");
+            // console.log("beforeend");
         }
     }
-    
+
 
 
     function gameOver(win) {
